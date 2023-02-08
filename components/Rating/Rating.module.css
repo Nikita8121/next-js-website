@@ -1,0 +1,18 @@
+.wrapper {
+	margin-left: -2.5px;
+}
+
+.filled {
+	fill: var(--primary);
+}
+
+.star {
+	padding-right: 2.5px;
+	padding-left: 2.5px;
+	transition: 0.2s;
+	box-sizing: content-box;
+}
+
+.isEditable {
+	cursor: pointer;
+}

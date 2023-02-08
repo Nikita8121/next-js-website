@@ -1,8 +1,13 @@
 :root {
 	--black: #3B434E;
-	--white: #FFFFFF;
+	--grey-light: #EBEBEB;
+	--white: #FFF;
 	--primary: #7653FC;
-	
+	--primary-hover: #4D21FC;
+	--red: #DE0000;
+	--green: #1DC37E;
+	--green-light: #C8F8E4;
+	--font-family: "Noto Sans KR", sans-serif;
 }
 
 * {
@@ -15,6 +20,8 @@ html,
 body {
 	max-width: 100vw;
 	overflow-x: hidden;
+	color: var(--black);
+	background: #F5F6F8;
 	font-family: "Noto Sans KR", sans-serif;
 }
 
@@ -22,4 +29,3 @@ a {
 	color: inherit;
 	text-decoration: none;
 }
-
