@@ -12,8 +12,6 @@ export const Menu = (): JSX.Element => {
   const { asPath } = useRouter();
 
   const openSecondLevel = (secondCategory: string) => {
-    console.log(secondCategory);
-
     setMenu &&
       setMenu(
         menu.map((m) => {
@@ -23,7 +21,6 @@ export const Menu = (): JSX.Element => {
           return m;
         })
       );
-    console.log(menu);
   };
 
   const buildFirstLevel = () => {

@@ -5,13 +5,13 @@ export enum TopLevelCategory {
   Products,
 }
 
-interface TopPageAdvantage {
+export interface TopPageAdvantage {
   title: string;
   description: string;
   _id: string;
 }
 
-interface HhData {
+export interface HhData {
   count: number;
   juniorSalary: number;
   middleSalary: number;
@@ -20,7 +20,7 @@ interface HhData {
   _id: string;
 }
 
-interface Blog {
+export interface Blog {
   h1: string;
   metaTitle: string;
   metaDescription: string;
@@ -28,7 +28,7 @@ interface Blog {
   _id: string;
 }
 
-interface Sravnikus {
+export interface Sravnikus {
   metaTitle: string;
   metaDescription: string;
   qas: any[];

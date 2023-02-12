@@ -9,17 +9,24 @@ import { GetStaticPaths, GetStaticPropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
 import { ProductModel } from "../../interfaces/product.interface";
 import firstLevelMenu from "@/helpers/helpers";
+import TopPageComponent from "../../page-components/TopPageComponent/TopPage.component";
 
-function Course({
+function TopPage({
   menu,
   firstCategory,
   page,
-  product,
-}: CourseProps): JSX.Element {
-  return <>{product ? product.length : null}</>;
+  products,
+}: TopPageProps): JSX.Element {
+  return (
+    <TopPageComponent
+      firstCategory={firstCategory}
+      page={page}
+      products={products}
+    />
+  );
 }
 
-export default withLayout(Course);
+export default withLayout(TopPage);
 
 export const getStaticPaths: GetStaticPaths = async () => {
   let paths: string[] = [];
@@ -66,8 +73,7 @@ export const getStaticProps = async ({
     const { data: page } = await axios.get<TopPageModel>(
       process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/ByAlias/" + params.alias
     );
-
-    const { data: product } = await axios.post<ProductModel[]>(
+    const { data: products } = await axios.post<ProductModel[]>(
       process.env.NEXT_PUBLIC_DOMAIN + "/api/product/find",
       {
         category: page.category,
@@ -75,7 +81,7 @@ export const getStaticProps = async ({
       }
     );
     return {
-      props: { menu, firstCategory: firstCategoryItem.id, page, product },
+      props: { menu, firstCategory: firstCategoryItem.id, page, products },
     };
   } catch (error) {
     return {
@@ -84,9 +90,9 @@ export const getStaticProps = async ({
   }
 };
 
-interface CourseProps extends Record<string, unknown> {
+interface TopPageProps extends Record<string, unknown> {
   menu: MenuItem[];
   firstCategory: TopLevelCategory;
   page: TopPageModel;
-  product: ProductModel[];
+  products: ProductModel[];
 }
