@@ -34,9 +34,13 @@ const TopPageComponent = ({
           </Tag>
         ) : null}
       </div>
-      {firstCategory == TopLevelCategory.Courses && <HhData {...page.hh} />}
-      <Advantages advantages={page.advantages} />
-      <Skills skills={page.tags} />
+      {firstCategory == TopLevelCategory.Courses && page.hh && (
+        <HhData {...page.hh} />
+      )}
+      {page.advantages ? (
+        <Advantages text={page.seoText} advantages={page.advantages} />
+      ) : null}
+      {page.tags ? <Skills skills={page.tags} /> : null}
     </div>
   );
 };

@@ -1,16 +1,12 @@
 .advantage {
 	display: grid;
 	grid-template-columns: auto 1fr;
-	align-items: center;
 	gap: 40px;
 	margin-bottom: 30px;
 }
 
 .title {
 	margin-bottom: 20px;
-	font-weight: 700;
-	font-size: 20px;
-	line-height: 27px;
 }
 
 .left {

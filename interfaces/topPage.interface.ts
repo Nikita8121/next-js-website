@@ -44,7 +44,7 @@ interface LearningClub {
 
 export interface TopPageModel {
   _id: string;
-  tags: string[];
+  tags?: string[];
   secondCategory: string;
   alias: string;
   title: string;
@@ -54,11 +54,11 @@ export interface TopPageModel {
   metaTitle: string;
   metaDescription: string;
   firstCategory: TopLevelCategory;
-  advantages: TopPageAdvantage[];
+  advantages?: TopPageAdvantage[];
   createdAt: Date;
   updatedAt: Date;
   __v: number;
-  hh: HhData;
+  hh?: HhData;
   qas: any[];
   addresses: any[];
   categoryOn: string;
