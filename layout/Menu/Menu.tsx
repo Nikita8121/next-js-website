@@ -5,7 +5,7 @@ import { AppContext } from "../../context/app.context";
 import { FirstLevelMenuItem, PageItem } from "@/interfaces/menu.interface";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import firstLevelMenu from "@/helpers/helpers";
+import { firstLevelMenu } from "@/helpers/helpers";
 
 export const Menu = (): JSX.Element => {
   const { menu, setMenu, firstCategory } = useContext(AppContext);

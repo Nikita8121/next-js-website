@@ -5,7 +5,7 @@ import ProductsIcon from "./icons/products.svg";
 import { FirstLevelMenuItem } from "./../interfaces/menu.interface";
 import { TopLevelCategory } from "./../interfaces/topPage.interface";
 
-const firstLevelMenu: FirstLevelMenuItem[] = [
+export const firstLevelMenu: FirstLevelMenuItem[] = [
   {
     route: "courses",
     name: "Курсы",
@@ -32,4 +32,8 @@ const firstLevelMenu: FirstLevelMenuItem[] = [
   },
 ];
 
-export default firstLevelMenu;
+export const priceRu = (price: number): string =>
+  price
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+    .concat(" ₽");

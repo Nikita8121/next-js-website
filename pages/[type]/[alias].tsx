@@ -8,7 +8,7 @@ import {
 import { GetStaticPaths, GetStaticPropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
 import { ProductModel } from "../../interfaces/product.interface";
-import firstLevelMenu from "@/helpers/helpers";
+import { firstLevelMenu } from "@/helpers/helpers";
 import TopPageComponent from "../../page-components/TopPageComponent/TopPage.component";
 
 function TopPage({

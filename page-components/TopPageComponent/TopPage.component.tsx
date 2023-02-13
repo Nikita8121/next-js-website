@@ -1,7 +1,7 @@
-import React from "react";
 import { TopPageComponentProps } from "./TopPageComponent.props";
-import { Htag, Tag, Card, HhData } from "../../components";
+import { Htag, Tag, HhData, Advantages, Skills } from "../../components";
 import styles from "./TopPageComponent.module.css";
+import { TopLevelCategory } from "../../interfaces/topPage.interface";
 
 const TopPageComponent = ({
   page,
@@ -34,7 +34,9 @@ const TopPageComponent = ({
           </Tag>
         ) : null}
       </div>
-      <HhData {...page.hh} />
+      {firstCategory == TopLevelCategory.Courses && <HhData {...page.hh} />}
+      <Advantages advantages={page.advantages} />
+      <Skills skills={page.tags} />
     </div>
   );
 };

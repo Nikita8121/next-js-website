@@ -5,6 +5,7 @@
 	background-color: var(--primary);
 	padding: 25px 32px;
 	gap: 0 10px;
+	margin-top: 50px;
 }
 
 .footer a:hover {
