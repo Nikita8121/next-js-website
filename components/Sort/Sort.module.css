@@ -1,19 +1,29 @@
-.p {
-	font-weight: 400;
-	color: #3B434E;
+.sortIcon {
+	display: none;
 }
 
-.small {
-	font-size: 14px;
-	line-height: 24px;
+.active {
+	font-weight: bold;
+	color: var(--primary);
 }
 
-.medium {
-	font-size: 16px;
-	line-height: 24px;
+.active .sortIcon {
+	display: block;
 }
 
-.large {
-	font-size: 18px;
-	line-height: 29px;
+.sort {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 40px;
+}
+
+.sort div {
+	display: grid;
+	grid-template-columns: 20px 1fr;
+	cursor: pointer;
+	align-items: center;
+}
+
+.sort div:not(.active) {
+	grid-template-columns: 1fr;
 }

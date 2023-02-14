@@ -1,4 +1,4 @@
-import { Htag, Button, P, Tag, Rating } from "@/components";
+import { Htag, Button, P, Tag, Rating, Input } from "@/components";
 import { withLayout } from "@/layout/Layout";
 import { useState } from "react";
 import axios from "axios";
@@ -16,6 +16,7 @@ function Home({ menu, firstCategory }: HomeProps): JSX.Element {
       <P>DWDEW</P>
       <Tag color="primary">sdfsdf</Tag>
       <Rating isEditable setRating={setRating} rating={rating} />
+      <Input />
     </>
   );
 }
@@ -35,5 +36,5 @@ export const getStaticProps = async () => {
 
 interface HomeProps extends Record<string, unknown> {
   menu: MenuItem[];
-  firstCategory: number;    
+  firstCategory: number;
 }
