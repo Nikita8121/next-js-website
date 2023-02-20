@@ -9,7 +9,7 @@ interface Blog {
   bigImage: string;
 }
 
-interface ReviewModel {
+export interface ReviewModel {
   _id: string;
   name: string;
   title: string;
@@ -31,6 +31,7 @@ export interface ProductModel {
   oldPrice: number;
   characteristics: ProductCharacteristic[];
   advantages: string;
+  disadvantages: string;
   initialRating: number;
   createdAt: Date;
   updatedAt: Date;

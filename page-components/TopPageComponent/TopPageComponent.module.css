@@ -17,3 +17,9 @@
 	align-items: baseline;
 	justify-items: left;
 }
+
+@media screen and (max-width: 768px) {
+	.title {
+		grid-template-columns: auto 1fr;
+	}
+}

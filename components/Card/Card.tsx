@@ -9,7 +9,13 @@ export const Card = ({
   ...props
 }: CardProps): JSX.Element => {
   return (
-    <div className={cn(styles.card, className)} {...props}>
+    <div
+      className={cn(styles.card, className, {
+        [styles.white]: color === "white",
+        [styles.blue]: color === "blue",
+      })}
+      {...props}
+    >
       {children}
     </div>
   );
