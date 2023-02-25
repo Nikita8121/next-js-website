@@ -37,10 +37,14 @@
 
 .success {
     background: var(--green-light);
-    padding: 20px;
-    position: relative;
-    border-radius: 5px;
-    margin-top: 20px;
+}
+
+.error {
+    background: var(--red-light);
+}
+
+.error .close path {
+    stroke: var(--red);
 }
 
 .successTitle {
@@ -53,6 +57,14 @@
     right: 20px;
     cursor: pointer;
 }
+
+.panel {
+    padding: 20px;
+    position: relative;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
 
 @media screen and (max-width: 1050px) {
     .reviewForm  {

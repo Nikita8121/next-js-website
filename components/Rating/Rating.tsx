@@ -8,6 +8,7 @@ export const Rating = ({
   isEditable = false,
   rating,
   setRating,
+  error,
   ...props
 }: RatingProps): JSX.Element => {
   const [ratingArray, setRatingArray] = useState<JSX.Element[]>(
@@ -56,10 +57,15 @@ export const Rating = ({
   };
 
   return (
-    <div className={styles.wrapper} {...props}>
-      {ratingArray.map((r: JSX.Element, i: number) => {
-        return <span key={i.toString()}>{r}</span>;
-      })}
+    <div {...props} style={{ position: "relative" }}>
+      <div className={styles.wrapper}>
+        {ratingArray.map((r: JSX.Element, i: number) => {
+          return <span key={i.toString()}>{r}</span>;
+        })}
+      </div>
+      {error ? (
+        <span className={styles.errorMessage}>{error.message}</span>
+      ) : null}
     </div>
   );
 };

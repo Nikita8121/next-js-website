@@ -33,6 +33,10 @@ const TopPageComponent = ({
     });
   }, [products]);
 
+  useEffect(() => {
+    dispatchSort({ type: "reset", initialState: products });
+  }, [products]);
+
   const setSort = (sort: SortEnum) => {
     dispatchSort({
       type: sort,
