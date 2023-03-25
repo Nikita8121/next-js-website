@@ -7,6 +7,21 @@ import Image from "next/image";
 import { useRef, useState, forwardRef, ForwardedRef } from "react";
 import { motion } from "framer-motion";
 
+const variants = {
+  visible: {
+    opacity: 1,
+    height: "auto",
+    /* overflow: "auto", */
+    marginBottom: 9,
+  },
+  hidden: {
+    opacity: 0,
+    overflow: "hidden",
+    marginBottom: 0,
+    height: 0,
+  },
+};
+
 export const Product = motion(
   forwardRef(
     (
@@ -22,6 +37,7 @@ export const Product = motion(
           behavior: "smooth",
           block: "start",
         });
+        reviewRef.current?.focus();
       };
 
       return (
@@ -104,22 +120,26 @@ export const Product = motion(
               </Button>
             </div>
           </Card>
-          <Card
-            color="blue"
-            className={cn(styles.review, {
-              [styles.opened]: isReviewOpened,
-              [styles.closed]: !isReviewOpened,
-            })}
-            ref={reviewRef}
+          <motion.div
+            variants={variants}
+            initial={isReviewOpened ? "visible" : "hidden"}
+            animate={isReviewOpened ? "visible" : "hidden"}
           >
-            {product.reviews.map((r) => (
-              <div key={r._id}>
-                <Review review={r} />
-                <Divider />
-              </div>
-            ))}
-            <ReviewForm productId={product._id} />
-          </Card>
+            <Card
+              color="blue"
+              className={cn(styles.review)}
+              ref={reviewRef}
+              tabIndex={0}
+            >
+              {product.reviews.map((r) => (
+                <div key={r._id}>
+                  <Review review={r} />
+                  <Divider />
+                </div>
+              ))}
+              <ReviewForm productId={product._id} />
+            </Card>
+          </motion.div>
         </div>
       );
     }

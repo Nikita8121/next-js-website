@@ -1,10 +1,9 @@
 .search {
 	position: relative;
 	width: 100%;
-	max-width: 230px;
 }
 
-.input {
+.input input {
 	width: 100%;
 }
 

@@ -19,11 +19,27 @@ export const Rating = ({
     constructRating(rating);
   }, [rating]);
 
+  const handleKey = (e: KeyboardEvent) => {
+    if (!isEditable || !setRating) return;
+    if (e.code === "ArrowRight" || e.code === "ArrowUp") {
+      if (!rating) {
+        setRating(1);
+      } else {
+        e.preventDefault();
+        setRating(rating < 5 ? rating + 1 : 5);
+      }
+    }
+    if (e.code === "ArrowLeft" || e.code === "ArrowDown") {
+      e.preventDefault();
+      setRating(rating > 1 ? rating - 1 : 1);
+    }
+  };
+
   const constructRating = (currentRating: number) => {
     const updatedArray = ratingArray.map((r: JSX.Element, i: number) => {
       return (
         // eslint-disable-next-line react/jsx-key
-        <StarIcon
+        <span
           className={cn(styles.star, {
             [styles.filled]: i < currentRating,
             [styles.isEditable]: isEditable,
@@ -31,19 +47,14 @@ export const Rating = ({
           onMouseEnter={() => changeDisplay(i + 1)}
           onMouseLeave={() => changeDisplay(rating)}
           onClick={() => onClick(i + 1)}
-          onKeyDown={(e: KeyboardEvent<SVGElement>) =>
-            isEditable && handleSpace(i + 1, e)
-          }
+          onKeyDown={handleKey}
           tabIndex={isEditable ? 0 : -1}
-        />
+        >
+          <StarIcon />
+        </span>
       );
     });
     setRatingArray(updatedArray);
-  };
-
-  const handleSpace = (i: number, e: KeyboardEvent<SVGElement>) => {
-    if (e.code != "Space" || !setRating) return;
-    setRating(i);
   };
 
   const onClick = (i: number) => {

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prepare": "husky install",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -30,6 +31,7 @@
   "devDependencies": {
     "@svgr/webpack": "^6.5.1",
     "cross-env": "^7.0.3",
+    "husky": "^8.0.3",
     "stylelint": "^14.16.1",
     "stylelint-config-standard": "^29.0.0"
   }

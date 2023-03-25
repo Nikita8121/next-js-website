@@ -3,7 +3,7 @@ import { Search } from "@/components";
 import styles from "./Sidebar.module.css";
 import { SidebarProps } from "./Sidebar.props";
 import cn from "classnames";
-import Logo from "./logo.svg";
+import Logo from "../logo.svg";
 
 export const Sidebar = ({ className, ...props }: SidebarProps): JSX.Element => {
   return (

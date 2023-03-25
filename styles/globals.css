@@ -2,13 +2,13 @@
 	--black: #3B434E;
 	--grey-light: #EBEBEB;
 	--grey: #A4A4A4;
-	--grey-dark: #787D85;
+	--grey-dark: #505359;
 	--white: #FFF;
-	--primary: #7653FC;
+	--primary: #7351f5;
 	--primary-hover: #4D21FC;
 	--red: #DE0000;
 	--red-light: #f46e6e;
-	--green: #1DC37E;
+	--green: #0d5a3a;
 	--green-light: #C8F8E4;
 	--font-family: "Noto Sans KR", sans-serif;
 }
@@ -26,6 +26,10 @@ body {
 	color: var(--black);
 	background: #F5F6F8;
 	font-family: "Noto Sans KR", sans-serif;
+}
+
+body {
+	overflow-y: hidden;
 }
 
 a {

@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./Advantage.module.css";
 import { AdvantageProps } from "./Advantage.props";
 import AdvantageIcon from "./advantage.svg";
-import cn from "classnames";
 import { P, Htag } from "..";
 
 export const Advantage = ({
