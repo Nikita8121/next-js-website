@@ -10,25 +10,31 @@
 	grid-row: 1 / span 2;
 }
 
-.title, .tags {
+.title,
+.tags {
 	grid-column: titlestart / middle;
 }
 
-.price, .priceTitle {
+.price,
+.priceTitle {
 	grid-column: pricestart / priceend;
 	white-space: nowrap;
 }
 
-.credit, .creditTitle {
+.credit,
+.creditTitle {
 	grid-column: creditstart / creditend;
 }
 
-.rating, .rateTitle {
+.rating,
+.rateTitle {
 	grid-column: ratestart / end;
 	white-space: nowrap;
 }
 
-.hr, .description, .actions {
+.hr,
+.description,
+.actions {
 	grid-column: start / end;
 }
 
@@ -55,7 +61,8 @@
 	margin-top: 7px;
 }
 
-.price, .credit {
+.price,
+.credit {
 	font-size: 20px;
 	line-height: 27px;
 	align-self: flex-end;
@@ -119,7 +126,6 @@
 	padding-right: 60px;
 	align-items: baseline;
 	gap: 10px;
-
 	font-size: 16px;
 	line-height: 32px;
 }
@@ -132,7 +138,6 @@
 	border-bottom: 1px dashed var(--gray-light);
 	margin-bottom: 5px;
 }
-
 
 .review {
 	padding: 30px;
@@ -156,9 +161,8 @@
 
 @media screen and (max-width: 1320px) {
 	.product {
-		grid-template-columns: 
-		70px 30px auto 40px auto 40px 1fr;
-		grid-template-areas: 
+		grid-template-columns: 70px 30px auto 40px auto 40px 1fr;
+		grid-template-areas:
 			"logo . title title title title title"
 			"logo . tags tags tags tags tags"
 			"price price price . credit . rating"
@@ -235,12 +239,10 @@
 	}
 }
 
-
 @media screen and (max-width: 640px) {
 	.product {
-		grid-template-columns: 
-		70px 30px 1fr;
-		grid-template-areas: 
+		grid-template-columns: 70px 30px 1fr;
+		grid-template-areas:
 			"logo . title"
 			"logo . tags"
 			"priceTitle priceTitle price"
@@ -270,7 +272,7 @@
 @media screen and (max-width: 480px) {
 	.product {
 		grid-template-columns: 1fr;
-		grid-template-areas: 
+		grid-template-areas:
 			"logo"
 			"title"
 			"tags"
